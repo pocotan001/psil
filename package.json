@@ -1,0 +1,35 @@
+{
+  "name": "psil",
+  "version": "0.0.1",
+  "description": "PageSpeed Insights with ngrok for local testing",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "bin": {
+    "psil": "bin/psil"
+  },
+  "repository": "pocotan001/psil",
+  "keywords": [
+    "insights",
+    "localhost",
+    "measure",
+    "ngrok",
+    "optimize",
+    "pagespeed",
+    "psi",
+    "website"
+  ],
+  "author": "pocotan001",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.7.5",
+    "ngrok": "^0.1.99",
+    "optimist": "^0.6.1",
+    "portfinder": "^0.4.0",
+    "psi": "^1.0.6",
+    "es6-promise": "~2.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1"
+  }
+}
