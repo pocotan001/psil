@@ -2,32 +2,16 @@
 
 'use strict';
 
+var fs   = require('fs');
 var argv = require('optimist').argv;
 var psil = require('../lib/psil');
 
 if (argv.h || argv.help) {
-    console.log([
-        'usage: psil [url|path] [options]',
-        '',
-        'options',
-        '  --root            defaults to ./',
-        '',
-        '  --psi.key            Google API Key. By default the free tier is used.',
-        '  --psi.strategy       Strategy to use when analyzing the page: mobile|desktop',
-        '  --psi.format         Output format: cli|json|tap',
-        '  --psi.locale         Locale results should be generated in.',
-        '  --psi.threshold      Threshold score to pass the PageSpeed test.',
-        '',
-        '  --ngrok.authtoken    Authentication token for identifying an ngrok.com account',
-        '  --ngrok.config       Path to ngrok configuration file. (default: $HOME/.ngrok)',
-        '  --ngrok.hostname     Request a custom hostname from the ngrok server. (HTTP only) (requires CNAME of your DNS)',
-        '  --ngrok.httpauth     username:password HTTP basic auth creds protecting the public tunnel endpoint',
-        '  --ngrok.log          Write log messages to this file. \'stdout\' and \'none\' have special meanings',
-        '  --ngrok.proto        The protocol of the traffic over the tunnel {\'http\', \'https\', \'tcp\'} (default: \'http+https\')',
-        '  --ngrok.subdomain    Request a custom subdomain from the ngrok server. (HTTP only)'
-    ].join('\n'));
-
-    process.exit(0);
+    return fs.createReadStream(__dirname + '/usage.txt')
+        .pipe(process.stdout)
+        .on('close', function () {
+            process.exit(1);
+        });
 }
 
 psil(argv._[0], argv, function(error) {
