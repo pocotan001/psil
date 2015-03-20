@@ -22,12 +22,12 @@
   "author": "pocotan001",
   "license": "MIT",
   "dependencies": {
+    "es6-promise": "~2.0.1",
     "http-server": "^0.7.5",
+    "minimist": "^1.1.1",
     "ngrok": "^0.1.99",
-    "optimist": "^0.6.1",
     "portfinder": "^0.4.0",
-    "psi": "^1.0.6",
-    "es6-promise": "~2.0.1"
+    "psi": "^1.0.6"
   },
   "devDependencies": {
     "mocha": "^2.2.1"
